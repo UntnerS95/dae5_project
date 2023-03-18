@@ -1,0 +1,23 @@
+{
+    "editor.mouseWheelZoom": true,
+    "workbench.colorCustomizations": {
+        "sideBarTitle.foreground": "#aec6cf",
+        "terminal.background": "#3C3B6E",
+        "terminal.foreground": "#aec6cf"
+    },
+    "editor.fontFamily": "Consolas", // Fira Code https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions
+    "editor.fontSize": 15,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "normal",
+    "editor.cursorBlinking": "expand",
+    "terminal.integrated.fontSize": 12,
+    "workbench.colorTheme": "Default Light+",
+    // enable native bracket matching (instead of the extension - see https://github.com/CoenraadS/Bracket-Pair-Colorizer-2#readme)
+    // coenraads.bracket-pair-colorizer
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    // "gitdoc.enabled": false,
+    "rest-client.previewResponseInUntitledDocument": true,
+    "java.compile.nullAnalysis.mode": "automatic"
+}

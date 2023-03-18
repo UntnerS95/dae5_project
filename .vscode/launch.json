@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Main<hr-schema-postgresql-lva>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "program.Main",
+      "projectName": "hr-schema-postgresql-lva",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
