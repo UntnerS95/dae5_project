@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS points(
 /* ***** POLICE CONTROL */
 CREATE TABLE IF NOT EXISTS police_control(
     point_id SERIAL PRIMARY KEY,
-    posibility INTEGER NOT NULL,
+    possibility INTEGER NOT NULL,
     CONSTRAINT point_id_fk 
         FOREIGN KEY (point_id)
         REFERENCES points(number)
@@ -104,6 +104,7 @@ CREATE OR REPLACE VIEW track_details_view(
     name,
     duration,
     difficulty,
+    id,
     location,
     type,
     description,
@@ -115,6 +116,7 @@ SELECT
     t.name,
     t.duration,
     t.difficulty,
+    p.number,
     p.location,
     p.type,
     p.description,
