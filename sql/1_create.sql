@@ -1,6 +1,6 @@
-CREATE SCHEMA MS;
+CREATE SCHEMA TMS; /* TMS = Track Management System */
 
-SET SEARCH_PATH TO ms;
+SET SEARCH_PATH TO tms;
 
 /* ***************************** */
 /* ***** DRIVER */
@@ -52,6 +52,8 @@ CREATE TABLE IF NOT EXISTS track(
         CHECK(date_of_creation < date_of_change)
 );
 
+/* ***************************** */
+/* ***** POINTS */
 CREATE TYPE point_type AS ENUM(
     'Startpunkt',
     'Wegpunkt',
@@ -60,8 +62,6 @@ CREATE TYPE point_type AS ENUM(
     'Radarfalle',
     'gefährliche Stelle'
 );
-/* ***************************** */
-/* ***** POINTS */
 CREATE TABLE IF NOT EXISTS points(
     number SERIAL PRIMARY KEY,
     location POINT NOT NULL,
@@ -107,8 +107,6 @@ CREATE OR REPLACE VIEW track_details_view(
     location,
     type,
     description,
-    posibility,
-    speed_limit,
     username,
     brand,
     model_description
@@ -120,21 +118,44 @@ SELECT
     p.location,
     p.type,
     p.description,
-    pc.posibility,
-    rt.speed_limit,
     d.username,
     m.brand,
     m.model_description
 FROM
     track t,
     points p,
-    police_control pc,
-    radartrap rt,
     driver d,
     motorcycle m
 WHERE
-    t.name = p.track_name;
-    /*AND t.username = d.username
+    t.name = p.track_name
+    AND t.username = d.username
     AND t.bike_number = m.number;
-*/
+
+/* ***************************** */
+/* ***** DRIVER AND MOTORCYCLE VIEW */
+CREATE OR REPLACE VIEW driver_motorcycle_view(
+    username,
+    first_name,
+    last_name,
+    date_of_birth,
+    origin,
+    brand,
+    model_description,
+    type_description
+) AS
+SELECT
+    d.username,
+    d.first_name,
+    d.last_name,
+    d.date_of_birth,
+    d.origin,
+    m.brand,
+    m.model_description,
+    m.type_description
+FROM
+    driver d,
+    motorcycle m
+WHERE
+    d.username = m.username;
+
 COMMIT;

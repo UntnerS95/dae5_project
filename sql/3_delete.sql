@@ -1,7 +1,7 @@
-SET SEARCH_PATH TO MS;
+SET SEARCH_PATH TO tms;
 
 DELETE FROM radartrap;
-DELETE FROM police_control WHERE posibility = 65;
+DELETE FROM police_control;
 DELETE FROM points WHERE track_name = 'Rout 66';
 DELETE FROM points WHERE description = 'Fahrzeugcheck';
 DELETE FROM points WHERE number = 4;

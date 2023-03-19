@@ -1,4 +1,4 @@
-SET SEARCH_PATH TO ms;
+SET SEARCH_PATH TO tms;
 
 SET TIME ZONE 'Europe/Vienna';
 
