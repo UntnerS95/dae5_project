@@ -18,14 +18,11 @@ public class ConnectionFactory {
 
   // URL for connecting :
   // https://jdbc.postgresql.org/documentation/head/connect.html
-  
-  // URL von der Datenbank vom Professor:
-  // postgresql://postgres:eCsupSz8SxlYOcao69kg@containers-us-west-41.railway.app:6453/railway
 
   @Value("${spring.datasource.url}")
-  private static final String localPostgresDbUrl = "jdbc:postgresql://containers-us-west-41.railway.app:6453/railway";
+  private static final String localPostgresDbUrl = "jdbc:postgresql://localhost:5432";
   private static final String USER = "user_admin";
-  private static final String PASS = "eCsupSz8SxlYOcao69kg";
+  private static final String PASS = "admin";
   private static final String SCHEMA = "tms";
   private static final String LOGLEVEL = "DEBUG"; // OFF, DEBUG, TRACE, FATAL, ERROR, WARNING
 

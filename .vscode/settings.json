@@ -19,5 +19,9 @@
     "java.configuration.updateBuildConfiguration": "automatic",
     // "gitdoc.enabled": false,
     "rest-client.previewResponseInUntitledDocument": true,
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.project.sourcePaths": [
+        "api\\src\\main\\java"
+    ],
+    "java.project.outputPath": "api\\target\\classes"
 }
