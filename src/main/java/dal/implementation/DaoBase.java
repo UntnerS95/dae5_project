@@ -1,6 +1,6 @@
-package DatabaseAccessLayer;
+package dal.implementation;
 
-import DatabaseAccessLayer.ConnectionFactory;
+import dal.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.SQLException;
 

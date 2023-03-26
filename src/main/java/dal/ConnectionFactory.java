@@ -1,4 +1,4 @@
-package DatabaseAccessLayer;
+package dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +20,7 @@ public class ConnectionFactory {
   // https://jdbc.postgresql.org/documentation/head/connect.html
 
   @Value("${spring.datasource.url}")
-  private static final String localPostgresDbUrl = "jdbc:postgresql://localhost:5432";
+  private static final String localPostgresDbUrl = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "user_admin";
   private static final String PASS = "admin";
   private static final String SCHEMA = "tms";
