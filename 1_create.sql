@@ -83,8 +83,8 @@ CREATE TABLE IF NOT EXISTS police_control(
         FOREIGN KEY (point_id)
         REFERENCES points(number)
         ON DELETE SET NULL,
-    CONSTRAINT check_posibility
-        CHECK(posibility BETWEEN 0 AND 100)
+    CONSTRAINT check_possibility
+        CHECK(possibility BETWEEN 0 AND 100)
 );
 
 /* ***************************** */
