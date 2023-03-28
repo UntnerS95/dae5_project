@@ -22,7 +22,7 @@ public class TrackDao extends DaoBase implements Dao<Track> {
     
     public Optional<Track> getByName(String track){
         String selectTrackByUsernameQuery;
-        selectTrackByUsernameQuery = "SELECT * FROM track WHERE name = " + track + ";";
+        selectTrackByUsernameQuery = "SELECT * FROM track WHERE name = '" + track + "';";
         Track t = null;
         Statement stmt;
         try{
@@ -107,16 +107,16 @@ public class TrackDao extends DaoBase implements Dao<Track> {
 
     public Optional<List<Points>> getPointsByTrack(String track){
         String selectDriverQuery;
-        selectDriverQuery = "SELECT * FROM points WHERE track_name = " + track + ";";
+        selectDriverQuery = "SELECT * FROM points WHERE track_name = '" + track + "';";
         List<Points> points = new ArrayList<Points>();
         try {
             ResultSet rs = conn.createStatement().executeQuery(selectDriverQuery);
             while (rs.next()) {
                 int id = rs.getInt("number");
-                PGpoint location = (PGpoint)rs.getArray("location");
+                PGpoint location = new PGpoint(rs.getString("location"));
                 String type = rs.getString("type");
                 String description = rs.getString("description");
-                String trackName = rs.getString("track_name");;
+                String trackName = rs.getString("track_name");
                 points.add(new Points(id,location,type,description,trackName));
             }
         } catch (SQLException e) {

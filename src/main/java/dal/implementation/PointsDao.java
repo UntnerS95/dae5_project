@@ -68,7 +68,7 @@ public class PointsDao extends DaoBase implements Dao<Points> {
             ResultSet rs = conn.createStatement().executeQuery(selectPointsQuery);
             while (rs.next()) {
                 int id = rs.getInt("number");
-                PGpoint location = (PGpoint)rs.getArray("location");
+                PGpoint location = new PGpoint(rs.getString("location"));
                 String type = rs.getString("type");
                 String description = rs.getString("description");
                 String trackName = rs.getString("track_name");;

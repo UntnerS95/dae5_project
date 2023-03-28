@@ -21,8 +21,8 @@ public class ConnectionFactory {
 
   @Value("${spring.datasource.url}")
   private static final String localPostgresDbUrl = "jdbc:postgresql://localhost:5432/postgres";
-  private static final String USER = "user_admin";
-  private static final String PASS = "admin";
+  private static final String USER = "postgres";
+  private static final String PASS = "dae5";
   private static final String SCHEMA = "tms";
   private static final String LOGLEVEL = "DEBUG"; // OFF, DEBUG, TRACE, FATAL, ERROR, WARNING
 

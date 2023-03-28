@@ -23,7 +23,7 @@ public class DriverDao extends DaoBase implements Dao<Driver> {
 
     public Optional<Driver> getByName(String user){
         String selectDriverByUsernameQuery;
-        selectDriverByUsernameQuery = "SELECT * FROM driver WHERE username = " + user + ";";
+        selectDriverByUsernameQuery = "SELECT * FROM driver WHERE username = '" + user + "';";
         Driver d = null;
         Statement stmt;
         try{
@@ -103,7 +103,7 @@ public class DriverDao extends DaoBase implements Dao<Driver> {
 
     public Optional<List<Motorcycle>> getMotorcyclesByDriver(String user){
         String selectDriverQuery;
-        selectDriverQuery = "SELECT * FROM motorcycle WHERE username = " + user + ";";
+        selectDriverQuery = "SELECT * FROM motorcycle WHERE username = '" + user + "';";
         List<Motorcycle> motorcycles = new ArrayList<Motorcycle>();
         try {
             ResultSet rs = conn.createStatement().executeQuery(selectDriverQuery);
@@ -125,7 +125,7 @@ public class DriverDao extends DaoBase implements Dao<Driver> {
 
     public Optional<List<Track>> getTracksByDriver(String user){
         String selectDriverQuery;
-        selectDriverQuery = "SELECT * FROM track WHERE username = " + user + ";";
+        selectDriverQuery = "SELECT * FROM track WHERE username = '" + user + "';";
         List<Track> tracks = new ArrayList<Track>();
         try {
             ResultSet rs = conn.createStatement().executeQuery(selectDriverQuery);
